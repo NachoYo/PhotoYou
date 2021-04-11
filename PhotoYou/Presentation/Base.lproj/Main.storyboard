@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="-125" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--Dashboard InitialVC-->
         <scene sceneID="cfz-lJ-Mcl">
             <objects>
-                <viewController id="7CW-y5-Qbi" sceneMemberID="viewController">
+                <viewController id="7CW-y5-Qbi" customClass="DashboardInitialVC" customModule="PhotoYou" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p97-yg-LfD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
