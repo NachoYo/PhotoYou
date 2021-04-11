@@ -10,6 +10,13 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
+extension SignUpView:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+}
+
 class SignUpView: UIViewController {
     //MARK:- Firebase Variables
     var getRef: Firestore!
@@ -23,6 +30,11 @@ class SignUpView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.passwordTF.delegate = self
+        self.emailTF.delegate = self
+        self.firstNameTF.delegate = self
+        self.lastNameTF.delegate = self
         
         //UI Specs
         self.navigationController?.isNavigationBarHidden = false
@@ -49,7 +61,10 @@ class SignUpView: UIViewController {
         }
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error{
-            print(error.localizedDescription)
+                let alertController = UIAlertController(title: "Alerta", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController,animated: true)
                 return
             }
             print("Usuario Creado", user?.user.uid)
@@ -78,15 +93,6 @@ class SignUpView: UIViewController {
                 print("Datos Guardados")
             }
         })
-        /*ref = getRef.collection("users").addDocument(data: data, completion: { (error) in
-            if let error = error{
-            self.showMessage(message: error.localizedDescription)
-            return
-        }else{
-            //self.showMessage(message: "Datos Guardados")
-            print("Datos Guardados")
-            }
-        })*/
     }
 
     

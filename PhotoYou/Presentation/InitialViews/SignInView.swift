@@ -9,6 +9,13 @@ import Foundation
 import UIKit
 import Firebase
 
+extension SignInView:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+}
+
 class SignInView: UIViewController {
 
     @IBOutlet var passwordTF: UITextField!
@@ -22,6 +29,9 @@ class SignInView: UIViewController {
         self.loginButton.layer.borderWidth = 2
         self.loginButton.layer.borderColor = UIColor.systemGreen.cgColor
         self.loginButton.layer.cornerRadius = 5
+        
+        self.passwordTF.delegate = self
+        self.emailTF.delegate = self
         
         let dismissGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(dismissGesture)
@@ -39,7 +49,10 @@ class SignInView: UIViewController {
         }
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error{
-                print(error.localizedDescription)
+                let alertController = UIAlertController(title: "Alerta", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController,animated: true)
                 return
             } else{
                 print("Usuario Autenticado")

@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gar-BV-hQk">
-                                <rect key="frame" x="0.0" y="110" width="414" height="666"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="686"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.93787674489999995" blue="0.88796677329999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZFo-KB-sHH">
                                     <size key="itemSize" width="128" height="128"/>
@@ -138,7 +138,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gar-BV-hQk" secondAttribute="trailing" id="0Gn-nd-DCZ"/>
                             <constraint firstAttribute="bottom" secondItem="4Vm-yS-OEt" secondAttribute="bottom" constant="50" id="3P1-8h-1Hs"/>
-                            <constraint firstItem="Gar-BV-hQk" firstAttribute="top" secondItem="p97-yg-LfD" secondAttribute="top" constant="110" id="FfC-Wx-eNp"/>
+                            <constraint firstItem="Gar-BV-hQk" firstAttribute="top" secondItem="p97-yg-LfD" secondAttribute="top" constant="90" id="FfC-Wx-eNp"/>
                             <constraint firstItem="4Vm-yS-OEt" firstAttribute="leading" secondItem="p97-yg-LfD" secondAttribute="leadingMargin" constant="20" id="OmT-ZN-97h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Vm-yS-OEt" secondAttribute="trailing" constant="20" id="Pag-8N-hAO"/>
                             <constraint firstAttribute="bottom" secondItem="Gar-BV-hQk" secondAttribute="bottom" constant="120" id="fr4-1x-5eQ"/>

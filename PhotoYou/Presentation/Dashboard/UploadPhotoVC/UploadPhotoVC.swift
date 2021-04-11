@@ -17,6 +17,13 @@ enum UploadPhotoCases{
     case profilePhoto
 }
 
+extension UploadPhotoVC:UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.photoDescTF.resignFirstResponder()
+        return false
+    }
+}
+
 class UploadPhotoVC: UIViewController, UINavigationControllerDelegate {
     var userID: String
     var getRef: Firestore!
@@ -24,13 +31,16 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate {
     @IBOutlet var searchButton: UIButton!
     @IBOutlet var uploadButton: UIButton!
     @IBOutlet var imagePreview: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
     
     @IBOutlet var photoDescTF: UITextField!
     
     var optimizedImage: Data!
     var stringsArray:[String]
     var dashboardDelegate:DashboardInicialDelegate!
-    init(userIDString:String,photosStringArray:[String],dashboardDel:DashboardInicialDelegate) {
+    var typeOfView:UploadPhotoCases
+    init(type:UploadPhotoCases,userIDString:String,photosStringArray:[String],dashboardDel:DashboardInicialDelegate) {
+        self.typeOfView = type
         self.dashboardDelegate = dashboardDel
         self.userID = userIDString
         self.stringsArray = photosStringArray
@@ -40,6 +50,7 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate {
     required init?(coder: NSCoder) {
         self.userID = ""
         self.stringsArray = []
+        self.typeOfView = .newPhoto
         super.init(nibName: nil, bundle: nil)
 //        fatalError("init(coder:) has not been implemented")
     }
@@ -64,7 +75,27 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate {
         self.uploadButton.layer.cornerRadius = 5
         self.uploadButton.backgroundColor = UIColor.systemGray6
         self.uploadButton.isUserInteractionEnabled = false
+        
+        switch self.typeOfView {
+        case .newPhoto:
+            self.photoDescTF.delegate = self
+        break
+        case .profilePhoto:
+            self.photoDescTF.isHidden = true
+            self.nameLabel.isHidden = false
+            self.cancelButton.setTitle("Cerrar", for: .normal)
+            self.loadUserName()
+        }
+        
+        let dismissGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        self.view.addGestureRecognizer(dismissGesture)
     }
+    
+    //MARK:- Selector Functions
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
+    }
+    
     func disableUploadPhotoButton(){
         self.uploadButton.layer.borderWidth = 2
         self.uploadButton.layer.borderColor = UIColor.systemGray.cgColor
@@ -82,6 +113,43 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate {
         self.uploadButton.setTitleColor(UIColor.white, for: .normal)
     }
     
+    func loadUserName(){
+        
+        let activityIndicator = UIActivityIndicatorView.init(style: .large)
+        activityIndicator.color = .systemGreen
+        activityIndicator.startAnimating()
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        
+        let result = getRef.collection("users").document(userID)
+        result.getDocument { (snapshot, error) in
+            let name = snapshot?.get("name") as? String ?? "sin valor"
+            let lastname = snapshot?.get("lastname") as? String ?? "sin valor"
+            self.nameLabel.text = name + " " + lastname
+        }
+        
+        let storageReference = Storage.storage().reference()
+        let placeHolder = UIImage(named: "noPhoto")
+        let userImageRef = storageReference.child("/usersPhotos").child(self.userID).child("profilePhoto").child("profilePhoto")
+        userImageRef.downloadURL { (url, error) in
+            if let error = error{
+                print("Error: ",error.localizedDescription)
+                
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+            }else{
+                print("Imagen Descargada")
+                print(url)
+                self.imagePreview.sd_setImage(with: url, placeholderImage: placeHolder)
+                
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+            }
+        }
+        self.imagePreview.sd_setImage(with: userImageRef, placeholderImage: placeHolder)
+        
+    }
+    
     @IBAction func cancelButtonAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -93,53 +161,92 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate {
         present(photoImage, animated: true)
     }
     @IBAction func uploadPhotoAction(_ sender: Any) {
-        let contains:Bool = self.stringsArray.contains(self.photoDescTF.text!)
-        if !contains{
-            let activityIndicator = UIActivityIndicatorView.init(style: .large)
-            activityIndicator.color = .red
-            activityIndicator.startAnimating()
-            activityIndicator.center = self.view.center
-            self.view.addSubview(activityIndicator)
-            
-            let storageReference = Storage.storage().reference()
-            let userImageRef = storageReference.child("/usersPhotos").child(self.userID).child(self.photoDescTF.text!)
-            let uploadMetaData = StorageMetadata()
-            
-            uploadMetaData.contentType = "image/jpeg"
-            
-            if let imageToUpload = self.optimizedImage{
-                userImageRef.putData(imageToUpload, metadata: uploadMetaData) { (storageMetaData, error) in
-                    activityIndicator.stopAnimating()
-                    activityIndicator.removeFromSuperview()
-                    if let error = error{
-                        print("Error: ",error.localizedDescription)
-                    }else{
-                        print("Éxito ",storageMetaData?.path)
-                        
-                        var stringArray:[String] = self.stringsArray
-                        stringArray.append(self.photoDescTF.text!)
-                        let data: [String: Any] = ["photosRef":stringArray]
-                        self.getRef.collection("users").document(self.userID).setData(data, mergeFields: ["photosRef"]) { (error) in
-                            if error != nil{
-                                return
+        switch self.typeOfView {
+        case .newPhoto:
+            let contains:Bool = self.stringsArray.contains(self.photoDescTF.text!)
+            if !contains{
+                let activityIndicator = UIActivityIndicatorView.init(style: .large)
+                activityIndicator.color = .red
+                activityIndicator.startAnimating()
+                activityIndicator.center = self.view.center
+                self.view.addSubview(activityIndicator)
+                
+                let storageReference = Storage.storage().reference()
+                let userImageRef = storageReference.child("/usersPhotos").child(self.userID).child(self.photoDescTF.text!)
+                let uploadMetaData = StorageMetadata()
+                
+                uploadMetaData.contentType = "image/jpeg"
+                
+                if let imageToUpload = self.optimizedImage{
+                    userImageRef.putData(imageToUpload, metadata: uploadMetaData) { (storageMetaData, error) in
+                        activityIndicator.stopAnimating()
+                        activityIndicator.removeFromSuperview()
+                        if let error = error{
+                            let alertController = UIAlertController(title: "Alerta", message: error.localizedDescription, preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                            alertController.addAction(okAction)
+                            self.present(alertController,animated: true)
+                        }else{
+                            var stringArray:[String] = self.stringsArray
+                            stringArray.append(self.photoDescTF.text!)
+                            let data: [String: Any] = ["photosRef":stringArray]
+                            self.getRef.collection("users").document(self.userID).setData(data, mergeFields: ["photosRef"]) { (error) in
+                                if error != nil{
+                                    return
+                                }
+                                else{
+                                    print("Datos Guardados")
+                                }
                             }
-                            else{
-                                print("Datos Guardados")
-                            }
+                            self.dashboardDelegate.reloadCollectionView()
+                            self.dismiss(animated: true, completion: nil)
                         }
-                        self.dashboardDelegate.reloadCollectionView()
-                        self.dismiss(animated: true, completion: nil)
                     }
                 }
             }
-        }
-        else{
-            let alertController = UIAlertController(title: "Alerta", message: "Ya tienes una foto con este título", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alertController.addAction(okAction)
-            self.present(alertController,animated: true)
+            else{
+                let alertController = UIAlertController(title: "Alerta", message: "Ya tienes una foto con este título", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController,animated: true)
+            }
+        case .profilePhoto:
+            let contains:Bool = self.stringsArray.contains(self.photoDescTF.text!)
+            if !contains{
+                let activityIndicator = UIActivityIndicatorView.init(style: .large)
+                activityIndicator.color = .systemGreen
+                activityIndicator.startAnimating()
+                activityIndicator.center = self.view.center
+                self.view.addSubview(activityIndicator)
+                
+                let storageReference = Storage.storage().reference()
+                let userImageRef = storageReference.child("/usersPhotos").child(self.userID).child("profilePhoto").child("profilePhoto")
+                let uploadMetaData = StorageMetadata()
+                
+                uploadMetaData.contentType = "image/jpeg"
+                
+                if let imageToUpload = self.optimizedImage{
+                    userImageRef.putData(imageToUpload, metadata: uploadMetaData) { (storageMetaData, error) in
+                        activityIndicator.stopAnimating()
+                        activityIndicator.removeFromSuperview()
+                        if let error = error{
+                            print("Error: ",error.localizedDescription)
+                        }else{
+                            print("Éxito ",storageMetaData?.path)
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                }
+                else{
+                    let alertController = UIAlertController(title: "Alerta", message: "Ya tienes una foto con este título", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertController.addAction(okAction)
+                    self.present(alertController,animated: true)
+                }
+            }
         }
     }
+    
     @IBAction func changedDescTF(_ sender: Any) {
         if  self.photoDescTF.text!.count > 0 && self.optimizedImage != nil{
             self.enableUploadPhotoButton()
@@ -156,11 +263,17 @@ extension UploadPhotoVC:UIImagePickerControllerDelegate{
             self.optimizedImage = optimizedImageData
             self.imagePreview.image = imageSelected
 //            self.saveImage(optimizedImageData)
-            if  self.photoDescTF.text!.count > 0{
+            
+            switch self.typeOfView {
+            case .newPhoto:
+                if  self.photoDescTF.text!.count > 0{
+                    self.enableUploadPhotoButton()
+                }
+                else{
+                    self.disableUploadPhotoButton()
+                }
+            case .profilePhoto:
                 self.enableUploadPhotoButton()
-            }
-            else{
-                self.disableUploadPhotoButton()
             }
         }
         dismiss(animated: true, completion: nil)

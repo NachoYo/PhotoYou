@@ -49,7 +49,7 @@ class PhotoDetailView: UIViewController {
         }
         
         self.descriptionLabel.text = self.imageDescription
-        
+        self.title = self.imageDescription
         let originalFrame:CGRect = self.detailImageView.bounds
         self.detailImageView.image = self.imageDetail
         self.detailImageView.bounds = originalFrame

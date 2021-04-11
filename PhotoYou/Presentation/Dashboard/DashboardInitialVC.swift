@@ -67,11 +67,13 @@ class DashboardInitialVC: UIViewController {
     }
     @objc func logout(){
         _ = try! Auth.auth().signOut()
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func profileAcces(){
-        
+        let profileVC:UploadPhotoVC = UploadPhotoVC(type: .profilePhoto, userIDString: self.userID,photosStringArray: self.photosReferences, dashboardDel: self)
+        profileVC.isModalInPresentation = true
+        self.present(profileVC, animated: true, completion: nil)
     }
     
     func getPhotos(){
@@ -123,7 +125,7 @@ class DashboardInitialVC: UIViewController {
     }
     
     @IBAction func uploadButtonAction(_ sender: UIButton) {
-        let uploadVC:UploadPhotoVC = UploadPhotoVC(userIDString: self.userID,photosStringArray: self.photosReferences, dashboardDel: self)
+        let uploadVC:UploadPhotoVC = UploadPhotoVC(type: .newPhoto, userIDString: self.userID,photosStringArray: self.photosReferences, dashboardDel: self)
         uploadVC.isModalInPresentation = true
         self.present(uploadVC, animated: true, completion: nil)
     }
