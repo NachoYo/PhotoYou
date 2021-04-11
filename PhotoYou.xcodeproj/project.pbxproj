@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,9 @@
 		C8C6FE73262296FE00528D13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C6FE71262296FE00528D13 /* LaunchScreen.storyboard */; };
 		C8C6FE7E262296FE00528D13 /* PhotoYouTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6FE7D262296FE00528D13 /* PhotoYouTests.swift */; };
 		C8C6FE89262296FE00528D13 /* PhotoYouUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6FE88262296FE00528D13 /* PhotoYouUITests.swift */; };
+		C8FFC72D26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
+		C8FFC72E26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
+		C8FFC72F26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,7 @@
 		C8C6FE84262296FE00528D13 /* PhotoYouUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoYouUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C6FE88262296FE00528D13 /* PhotoYouUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoYouUITests.swift; sourceTree = "<group>"; };
 		C8C6FE8A262296FE00528D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "PhotoYou/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CF9ACE55D9FEE98D76A32716 /* Pods_PhotoYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1750B67B9D2E2467D5EFBF7 /* Pods-PhotoYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoYou.debug.xcconfig"; path = "Target Support Files/Pods-PhotoYou/Pods-PhotoYou.debug.xcconfig"; sourceTree = "<group>"; };
 		DA8C06C8B03B4106619E19B9 /* Pods-PhotoYouTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoYouTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoYouTests/Pods-PhotoYouTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +105,6 @@
 				DA8C06C8B03B4106619E19B9 /* Pods-PhotoYouTests.debug.xcconfig */,
 				BD182C5F6101F0072DE487F9 /* Pods-PhotoYouTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,13 +143,9 @@
 		C8C6FE65262296FC00528D13 /* PhotoYou */ = {
 			isa = PBXGroup;
 			children = (
-				C8C6FE66262296FC00528D13 /* AppDelegate.swift */,
-				C8C6FE68262296FC00528D13 /* SceneDelegate.swift */,
-				C8C6FE6A262296FC00528D13 /* ViewController.swift */,
-				C8C6FE6C262296FC00528D13 /* Main.storyboard */,
-				C8C6FE6F262296FE00528D13 /* Assets.xcassets */,
-				C8C6FE71262296FE00528D13 /* LaunchScreen.storyboard */,
-				C8C6FE74262296FE00528D13 /* Info.plist */,
+				C8FFC72B26229A7200D3EE6D /* General */,
+				C8FFC72526229A5000D3EE6D /* Presentation */,
+				C8FFC72426229A4600D3EE6D /* Assets */,
 			);
 			path = PhotoYou;
 			sourceTree = "<group>";
@@ -167,6 +166,35 @@
 				C8C6FE8A262296FE00528D13 /* Info.plist */,
 			);
 			path = PhotoYouUITests;
+			sourceTree = "<group>";
+		};
+		C8FFC72426229A4600D3EE6D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */,
+				C8C6FE6F262296FE00528D13 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		C8FFC72526229A5000D3EE6D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C8C6FE71262296FE00528D13 /* LaunchScreen.storyboard */,
+				C8C6FE6C262296FC00528D13 /* Main.storyboard */,
+				C8C6FE6A262296FC00528D13 /* ViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C8FFC72B26229A7200D3EE6D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				C8C6FE74262296FE00528D13 /* Info.plist */,
+				C8C6FE66262296FC00528D13 /* AppDelegate.swift */,
+				C8C6FE68262296FC00528D13 /* SceneDelegate.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C6FE73262296FE00528D13 /* LaunchScreen.storyboard in Resources */,
+				C8FFC72D26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */,
 				C8C6FE70262296FE00528D13 /* Assets.xcassets in Resources */,
 				C8C6FE6E262296FC00528D13 /* Main.storyboard in Resources */,
 			);
@@ -289,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8FFC72E26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8FFC72F26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

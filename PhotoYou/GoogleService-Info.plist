@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>777936664518-2qla5brv9mi66n9gb7igibu5vhrbblct.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.777936664518-2qla5brv9mi66n9gb7igibu5vhrbblct</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAgMJVQQiMoU3I2C7PbgrzKefuo9klA_Fo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>777936664518</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.iosDiplo.Firebase-Impl</string>
+	<key>PROJECT_ID</key>
+	<string>diplomado-clase6mar</string>
+	<key>STORAGE_BUCKET</key>
+	<string>diplomado-clase6mar.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:777936664518:ios:1a3fdafa2d8b2074ab24c7</string>
+	<key>DATABASE_URL</key>
+	<string>https://diplomado-clase6mar.firebaseio.com</string>
+</dict>
+</plist>
