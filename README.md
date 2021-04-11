@@ -1,7 +1,7 @@
 # PhotoYou
 Una aplicación para que subas tus fotos
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/NachoYo/PhotoYou/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%2012%20Pro%20Max%20iOS%2014.4%20-%202021-04-11%20at%2005.23.52.png)
 
 ## Descripción
 PhotoYou es una aplicación para que puedas subir tus fotografías
