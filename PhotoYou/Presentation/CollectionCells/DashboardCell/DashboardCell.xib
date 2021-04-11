@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -33,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.93787674494111672" blue="0.88796677327690587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="vOz-J1-Yrd" firstAttribute="centerX" secondItem="u2h-S4-dps" secondAttribute="centerX" id="CBE-5e-0Ec"/>
                             <constraint firstAttribute="trailing" secondItem="6ax-qG-7or" secondAttribute="trailing" constant="10" id="Eh3-l6-km4"/>
@@ -51,12 +50,11 @@
                 <constraint firstItem="u2h-S4-dps" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Sm6-B7-aFM"/>
                 <constraint firstItem="u2h-S4-dps" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wJO-dZ-sZB"/>
             </constraints>
+            <connections>
+                <outlet property="photoImageView" destination="6ax-qG-7or" id="ieN-Bx-UyK"/>
+                <outlet property="titleLabel" destination="vOz-J1-Yrd" id="dc1-JU-cBN"/>
+            </connections>
             <point key="canvasLocation" x="138" y="90"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

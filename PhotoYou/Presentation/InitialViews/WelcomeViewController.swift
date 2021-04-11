@@ -32,3 +32,9 @@ class WelcomeViewController: UIViewController {
     }
 
 }
+
+class RoundedBordersView:UIView{
+    override func didMoveToSuperview() {
+        self.layer.cornerRadius = 15.0
+    }
+}

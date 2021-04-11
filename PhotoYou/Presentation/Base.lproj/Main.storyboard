@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhm-2Q-eJY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhm-2Q-eJY" customClass="RoundedBordersView" customModule="PhotoYou" customModuleProvider="target">
                                 <rect key="frame" x="30" y="118" width="354" height="714"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Bienvenido!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umq-tP-v5g">
@@ -98,8 +98,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gar-BV-hQk">
-                                <rect key="frame" x="0.0" y="98" width="414" height="664"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="110" width="414" height="666"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.93787674489999995" blue="0.88796677329999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZFo-KB-sHH">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -117,25 +117,61 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vm-yS-OEt">
+                                <rect key="frame" x="40" y="786" width="334" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2gT-37-W0d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <state key="normal" title="Subir Foto">
+                                    <color key="titleColor" systemColor="systemGreenColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAction:" destination="VHU-xx-cvF" eventType="touchUpInside" id="txf-FL-J7J"/>
+                                    <action selector="uploadButtonAction:" destination="7CW-y5-Qbi" eventType="touchUpInside" id="fvh-Cw-nAo"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="sK1-60-hnX"/>
+                        <viewLayoutGuide key="safeArea" id="F3I-v2-JhF"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="sK1-60-hnX" firstAttribute="trailing" secondItem="Gar-BV-hQk" secondAttribute="trailing" id="0Gn-nd-DCZ"/>
-                            <constraint firstItem="Gar-BV-hQk" firstAttribute="top" secondItem="sK1-60-hnX" secondAttribute="top" constant="50" id="FfC-Wx-eNp"/>
-                            <constraint firstItem="Gar-BV-hQk" firstAttribute="top" secondItem="sK1-60-hnX" secondAttribute="top" constant="10" id="LKj-Wf-1fS"/>
-                            <constraint firstItem="sK1-60-hnX" firstAttribute="bottom" secondItem="Gar-BV-hQk" secondAttribute="bottom" constant="100" id="fr4-1x-5eQ"/>
-                            <constraint firstItem="Gar-BV-hQk" firstAttribute="leading" secondItem="sK1-60-hnX" secondAttribute="leading" id="kiv-Sg-AjN"/>
+                            <constraint firstAttribute="trailing" secondItem="Gar-BV-hQk" secondAttribute="trailing" id="0Gn-nd-DCZ"/>
+                            <constraint firstAttribute="bottom" secondItem="4Vm-yS-OEt" secondAttribute="bottom" constant="50" id="3P1-8h-1Hs"/>
+                            <constraint firstItem="Gar-BV-hQk" firstAttribute="top" secondItem="p97-yg-LfD" secondAttribute="top" constant="110" id="FfC-Wx-eNp"/>
+                            <constraint firstItem="4Vm-yS-OEt" firstAttribute="leading" secondItem="p97-yg-LfD" secondAttribute="leadingMargin" constant="20" id="OmT-ZN-97h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Vm-yS-OEt" secondAttribute="trailing" constant="20" id="Pag-8N-hAO"/>
+                            <constraint firstAttribute="bottom" secondItem="Gar-BV-hQk" secondAttribute="bottom" constant="120" id="fr4-1x-5eQ"/>
+                            <constraint firstItem="Gar-BV-hQk" firstAttribute="leading" secondItem="p97-yg-LfD" secondAttribute="leading" id="kiv-Sg-AjN"/>
+                            <constraint firstItem="4Vm-yS-OEt" firstAttribute="centerX" secondItem="p97-yg-LfD" secondAttribute="centerX" id="oyE-0l-eLL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dJa-bc-7wK"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="Gar-BV-hQk" id="rPX-Gg-MSb"/>
+                        <outlet property="uploadButton" destination="4Vm-yS-OEt" id="TlX-ck-V2z"/>
+                        <segue destination="4AS-Y1-4ui" kind="show" identifier="seeDetailSegue" id="bkl-By-tU5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNv-2H-k1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="794" y="-360"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="V8o-WK-ctl">
+            <objects>
+                <viewController id="4AS-Y1-4ui" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2vM-C2-xSv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HBN-bQ-HTR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bVR-uq-P5o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iM5-Ex-n4C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="-360"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="KuV-bC-hdB">
@@ -145,7 +181,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JrY-H1-y1v">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JrY-H1-y1v" customClass="RoundedBordersView" customModule="PhotoYou" customModuleProvider="target">
                                 <rect key="frame" x="30" y="118" width="354" height="714"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhotoYou" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya1-hn-1hL">
@@ -235,7 +271,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGr-Uf-SZV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGr-Uf-SZV" customClass="RoundedBordersView" customModule="PhotoYou" customModuleProvider="target">
                                 <rect key="frame" x="30" y="118" width="354" height="748"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu correo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cE8-Vl-EDh">
@@ -324,7 +360,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wj6-un-Iht">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wj6-un-Iht" customClass="RoundedBordersView" customModule="PhotoYou" customModuleProvider="target">
                                 <rect key="frame" x="30" y="118" width="354" height="714"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu correo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-A9-eSh">
