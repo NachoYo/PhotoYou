@@ -12,6 +12,11 @@ import FirebaseStorage
 import MobileCoreServices
 import FirebaseUI
 
+enum UploadPhotoCases{
+    case newPhoto
+    case profilePhoto
+}
+
 class UploadPhotoVC: UIViewController, UINavigationControllerDelegate {
     var userID: String
     var getRef: Firestore!
