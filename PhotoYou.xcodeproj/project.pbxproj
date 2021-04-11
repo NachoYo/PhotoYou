@@ -12,12 +12,14 @@
 		96ABF1F9673160A917D60B80 /* Pods_PhotoYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9ACE55D9FEE98D76A32716 /* Pods_PhotoYou.framework */; };
 		C8C6FE67262296FC00528D13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6FE66262296FC00528D13 /* AppDelegate.swift */; };
 		C8C6FE69262296FC00528D13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6FE68262296FC00528D13 /* SceneDelegate.swift */; };
-		C8C6FE6B262296FC00528D13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6FE6A262296FC00528D13 /* ViewController.swift */; };
 		C8C6FE6E262296FC00528D13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C6FE6C262296FC00528D13 /* Main.storyboard */; };
 		C8C6FE70262296FE00528D13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C6FE6F262296FE00528D13 /* Assets.xcassets */; };
 		C8C6FE73262296FE00528D13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8C6FE71262296FE00528D13 /* LaunchScreen.storyboard */; };
 		C8C6FE7E262296FE00528D13 /* PhotoYouTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6FE7D262296FE00528D13 /* PhotoYouTests.swift */; };
 		C8C6FE89262296FE00528D13 /* PhotoYouUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C6FE88262296FE00528D13 /* PhotoYouUITests.swift */; };
+		C8CDEA222622A18900D12753 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA212622A18900D12753 /* WelcomeViewController.swift */; };
+		C8CDEA232622A18900D12753 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA212622A18900D12753 /* WelcomeViewController.swift */; };
+		C8CDEA242622A18900D12753 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA212622A18900D12753 /* WelcomeViewController.swift */; };
 		C8FFC72D26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
 		C8FFC72E26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
 		C8FFC72F26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
@@ -49,7 +51,6 @@
 		C8C6FE63262296FC00528D13 /* PhotoYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C6FE66262296FC00528D13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8C6FE68262296FC00528D13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8C6FE6A262296FC00528D13 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8C6FE6D262296FC00528D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8C6FE6F262296FE00528D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8C6FE72262296FE00528D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		C8C6FE84262296FE00528D13 /* PhotoYouUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoYouUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C6FE88262296FE00528D13 /* PhotoYouUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoYouUITests.swift; sourceTree = "<group>"; };
 		C8C6FE8A262296FE00528D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8CDEA212622A18900D12753 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "PhotoYou/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CF9ACE55D9FEE98D76A32716 /* Pods_PhotoYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1750B67B9D2E2467D5EFBF7 /* Pods-PhotoYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoYou.debug.xcconfig"; path = "Target Support Files/Pods-PhotoYou/Pods-PhotoYou.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +170,14 @@
 			path = PhotoYouUITests;
 			sourceTree = "<group>";
 		};
+		C8CDEA202622A16A00D12753 /* InitialViews */ = {
+			isa = PBXGroup;
+			children = (
+				C8CDEA212622A18900D12753 /* WelcomeViewController.swift */,
+			);
+			path = InitialViews;
+			sourceTree = "<group>";
+		};
 		C8FFC72426229A4600D3EE6D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,9 +190,9 @@
 		C8FFC72526229A5000D3EE6D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C8CDEA202622A16A00D12753 /* InitialViews */,
 				C8C6FE71262296FE00528D13 /* LaunchScreen.storyboard */,
 				C8C6FE6C262296FC00528D13 /* Main.storyboard */,
-				C8C6FE6A262296FC00528D13 /* ViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -474,7 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C6FE6B262296FC00528D13 /* ViewController.swift in Sources */,
+				C8CDEA222622A18900D12753 /* WelcomeViewController.swift in Sources */,
 				C8C6FE67262296FC00528D13 /* AppDelegate.swift in Sources */,
 				C8C6FE69262296FC00528D13 /* SceneDelegate.swift in Sources */,
 			);
@@ -485,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C6FE7E262296FE00528D13 /* PhotoYouTests.swift in Sources */,
+				C8CDEA232622A18900D12753 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C6FE89262296FE00528D13 /* PhotoYouUITests.swift in Sources */,
+				C8CDEA242622A18900D12753 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
