@@ -126,6 +126,7 @@ class UploadPhotoVC: UIViewController, UINavigationControllerDelegate {
             let name = snapshot?.get("name") as? String ?? "sin valor"
             let lastname = snapshot?.get("lastname") as? String ?? "sin valor"
             self.nameLabel.text = name + " " + lastname
+            self.nameLabel.layer.masksToBounds = false
         }
         
         let storageReference = Storage.storage().reference()
