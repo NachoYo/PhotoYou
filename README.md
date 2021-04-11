@@ -1,7 +1,7 @@
 # PhotoYou
 Una aplicación para que subas tus fotos
 
-![alt text](https://photos.app.goo.gl/idAtuLxa8CQZG4gSA)
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
 
 ## Descripción
 PhotoYou es una aplicación para que puedas subir tus fotografías
