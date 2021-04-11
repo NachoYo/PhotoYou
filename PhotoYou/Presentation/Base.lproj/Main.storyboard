@@ -204,21 +204,91 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wj6-un-Iht">
                                 <rect key="frame" x="30" y="118" width="354" height="714"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-A9-eSh">
-                                        <rect key="frame" x="129" y="119" width="97" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu correo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vgg-A9-eSh">
+                                        <rect key="frame" x="30" y="94" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingresa tu correo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkS-nC-LDS">
-                                        <rect key="frame" x="38" y="69" width="130" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa tu correo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JkS-nC-LDS">
+                                        <rect key="frame" x="30" y="50" width="148.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.287729554" green="0.57643956220000003" blue="0.3285661681" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CCM-p0-4gW">
+                                        <rect key="frame" x="30" y="212" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa tu contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ut-2b-iHu">
+                                        <rect key="frame" x="30" y="168" width="189.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.287729554" green="0.57643956220000003" blue="0.3285661681" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C02-sn-yl9">
+                                        <rect key="frame" x="30" y="330" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa tu nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1m-wv-Xvh">
+                                        <rect key="frame" x="30" y="286" width="159" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.287729554" green="0.57643956220000003" blue="0.3285661681" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingresa tu apellido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCr-tS-eOW">
+                                        <rect key="frame" x="30" y="448" width="294" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingresa tu apellido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1y-nI-0v3">
+                                        <rect key="frame" x="30" y="404" width="160" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.287729554" green="0.57643956220000003" blue="0.3285661681" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRE-hQ-zN6">
+                                        <rect key="frame" x="20" y="604" width="314" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Rt3-yR-nTl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                        <state key="normal" title="Registrarse">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButtonAction:" destination="AwI-px-FBh" eventType="touchUpInside" id="wMr-XE-EpJ"/>
+                                            <action selector="signUpAction:" destination="VHU-xx-cvF" eventType="touchUpInside" id="XEO-Mz-GEZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="XCr-tS-eOW" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="30" id="1lr-fN-QeL"/>
+                                    <constraint firstAttribute="trailing" secondItem="XCr-tS-eOW" secondAttribute="trailing" constant="30" id="2lz-f1-LtN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vgg-A9-eSh" secondAttribute="trailing" constant="30" id="6ZL-3F-eg6"/>
+                                    <constraint firstItem="Vgg-A9-eSh" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="30" id="98Q-f4-mWk"/>
+                                    <constraint firstItem="0Ut-2b-iHu" firstAttribute="top" secondItem="Vgg-A9-eSh" secondAttribute="bottom" constant="40" id="AUR-MK-lav"/>
+                                    <constraint firstItem="CCM-p0-4gW" firstAttribute="top" secondItem="0Ut-2b-iHu" secondAttribute="bottom" constant="20" id="C4s-5A-Qn8"/>
+                                    <constraint firstItem="x1y-nI-0v3" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="30" id="Eo8-75-bFN"/>
+                                    <constraint firstAttribute="trailing" secondItem="CCM-p0-4gW" secondAttribute="trailing" constant="30" id="Ibs-so-R4l"/>
+                                    <constraint firstItem="wRE-hQ-zN6" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="20" id="Luy-5o-26O"/>
+                                    <constraint firstItem="C02-sn-yl9" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="30" id="Vum-Sl-fzL"/>
+                                    <constraint firstItem="Vgg-A9-eSh" firstAttribute="top" secondItem="JkS-nC-LDS" secondAttribute="bottom" constant="20" id="W66-z6-JbJ"/>
+                                    <constraint firstItem="C02-sn-yl9" firstAttribute="top" secondItem="T1m-wv-Xvh" secondAttribute="bottom" constant="20" id="Zb2-Ks-8Qy"/>
+                                    <constraint firstItem="T1m-wv-Xvh" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="30" id="a2r-kh-YRt"/>
+                                    <constraint firstItem="x1y-nI-0v3" firstAttribute="top" secondItem="C02-sn-yl9" secondAttribute="bottom" constant="40" id="aiM-LQ-O09"/>
+                                    <constraint firstItem="CCM-p0-4gW" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="30" id="b8h-qc-tai"/>
+                                    <constraint firstAttribute="trailing" secondItem="wRE-hQ-zN6" secondAttribute="trailing" constant="20" id="evs-RW-Xxv"/>
+                                    <constraint firstItem="T1m-wv-Xvh" firstAttribute="top" secondItem="CCM-p0-4gW" secondAttribute="bottom" constant="40" id="iCa-TC-rmY"/>
+                                    <constraint firstAttribute="bottom" secondItem="wRE-hQ-zN6" secondAttribute="bottom" constant="50" id="ivN-dV-TD3"/>
+                                    <constraint firstItem="JkS-nC-LDS" firstAttribute="top" secondItem="wj6-un-Iht" secondAttribute="top" constant="50" id="jnj-O0-ZxE"/>
+                                    <constraint firstItem="JkS-nC-LDS" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="30" id="sRm-PL-q1a"/>
+                                    <constraint firstItem="0Ut-2b-iHu" firstAttribute="leading" secondItem="wj6-un-Iht" secondAttribute="leading" constant="30" id="vPt-2g-aFw"/>
+                                    <constraint firstAttribute="trailing" secondItem="C02-sn-yl9" secondAttribute="trailing" constant="30" id="xlK-Zy-YDO"/>
+                                    <constraint firstItem="XCr-tS-eOW" firstAttribute="top" secondItem="x1y-nI-0v3" secondAttribute="bottom" constant="20" id="yrM-dq-yFN"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IM9-np-RLt"/>
@@ -231,6 +301,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T8B-VV-yCs"/>
+                    <connections>
+                        <outlet property="emailTF" destination="Vgg-A9-eSh" id="yRQ-Lv-hga"/>
+                        <outlet property="firstNameTF" destination="C02-sn-yl9" id="faQ-2m-gpZ"/>
+                        <outlet property="lastNameTF" destination="XCr-tS-eOW" id="wyr-M1-XSH"/>
+                        <outlet property="passwordTF" destination="CCM-p0-4gW" id="MBE-nM-3Qz"/>
+                        <outlet property="registerButton" destination="wRE-hQ-zN6" id="YlW-Rq-DOM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ehi-lx-h9P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -27,7 +27,7 @@ class WelcomeViewController: UIViewController {
                 return
             }else{
                 print("Usuario Loggeado")
-                self.performSegue(withIdentifier: "welcomeView", sender: self)
+//                self.performSegue(withIdentifier: "welcomeView", sender: self)
             }
         }
     }
