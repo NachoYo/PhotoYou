@@ -1,7 +1,7 @@
 # PhotoYou
 Una aplicación para que subas tus fotos
 
-![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fjesuslc.com%2F2016%2F07%2F12%2Fcomo-escribir-un-readme-que-mole%2F&psig=AOvVaw2ROmK77k4lQp-xgkC4JNio&ust=1618222882765000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIis7ZL89e8CFQAAAAAdAAAAABAD)
+![alt text](https://photos.app.goo.gl/idAtuLxa8CQZG4gSA)
 
 ## Descripción
 PhotoYou es una aplicación para que puedas subir tus fotografías
