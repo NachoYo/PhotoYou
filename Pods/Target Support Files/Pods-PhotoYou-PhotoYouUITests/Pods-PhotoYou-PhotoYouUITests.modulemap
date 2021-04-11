@@ -1,0 +1,6 @@
+framework module Pods_PhotoYou_PhotoYouUITests {
+  umbrella header "Pods-PhotoYou-PhotoYouUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
