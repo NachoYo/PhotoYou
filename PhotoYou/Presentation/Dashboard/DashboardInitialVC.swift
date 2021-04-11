@@ -54,7 +54,6 @@ class DashboardInitialVC: UIViewController {
         flowlayout.minimumInteritemSpacing = 0
         flowlayout.minimumLineSpacing = 0
         self.mainCollectionView.collectionViewLayout = flowlayout
-        self.mainCollectionView.isPagingEnabled = true
         self.mainCollectionView.reloadData()
         
         self.getPhotos()
@@ -96,6 +95,7 @@ class DashboardInitialVC: UIViewController {
             self.photosReferences = photos
             
             if self.photosReferences.count > 0{
+                self.photosCells = []
                 for i in 0...self.photosReferences.count - 1{
                     let cell = self.mainCollectionView.dequeueReusableCell(withReuseIdentifier: "DashboardCell", for: IndexPath(item: i, section: 0))
                     self.photosCells.append(cell)
