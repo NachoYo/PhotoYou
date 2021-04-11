@@ -40,6 +40,7 @@ class SignUpView: UIViewController {
         self.view.endEditing(true)
     }
     
+    
     //MARK:- IBActions
     @IBAction func registerButtonAction(_ sender: UIButton) {
         guard let email = self.emailTF.text, email != "", let password = self.passwordTF.text, password != "", let name = self.firstNameTF.text, name != "", let lastname = self.lastNameTF.text, lastname != "" else{
@@ -66,7 +67,8 @@ class SignUpView: UIViewController {
     }
     
     func storeUser(uid: String, name: String, lastname: String){
-        let data: [String: Any] = ["name": name, "lastname": lastname]
+        let emptyStringArray:[String] = []
+        let data: [String: Any] = ["name": name, "lastname": lastname,"photosRef":emptyStringArray]
         
         getRef.collection("users").document(uid).setData(data, completion: { (error) in
             if error != nil{
@@ -86,4 +88,6 @@ class SignUpView: UIViewController {
             }
         })*/
     }
+
+    
 }

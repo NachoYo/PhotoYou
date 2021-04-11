@@ -14,7 +14,6 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        
         self.isUserLogged()
     }
     
@@ -27,7 +26,7 @@ class WelcomeViewController: UIViewController {
             }else{
                 print("Usuario Loggeado")
                 self.performSegue(withIdentifier: "loggedUserSegue", sender: self)
-                _ = try! Auth.auth().signOut()
+                
             }
         }
     }

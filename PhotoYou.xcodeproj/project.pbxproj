@@ -32,6 +32,12 @@
 		C8CDEA552622B50500D12753 /* DashboardInitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA542622B50500D12753 /* DashboardInitialVC.swift */; };
 		C8CDEA562622B50500D12753 /* DashboardInitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA542622B50500D12753 /* DashboardInitialVC.swift */; };
 		C8CDEA572622B50500D12753 /* DashboardInitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA542622B50500D12753 /* DashboardInitialVC.swift */; };
+		C8CDEA742622CAED00D12753 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA722622CAED00D12753 /* DashboardCell.swift */; };
+		C8CDEA752622CAED00D12753 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA722622CAED00D12753 /* DashboardCell.swift */; };
+		C8CDEA762622CAED00D12753 /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CDEA722622CAED00D12753 /* DashboardCell.swift */; };
+		C8CDEA772622CAED00D12753 /* DashboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CDEA732622CAED00D12753 /* DashboardCell.xib */; };
+		C8CDEA782622CAED00D12753 /* DashboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CDEA732622CAED00D12753 /* DashboardCell.xib */; };
+		C8CDEA792622CAED00D12753 /* DashboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CDEA732622CAED00D12753 /* DashboardCell.xib */; };
 		C8FFC72D26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
 		C8FFC72E26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
 		C8FFC72F26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */; };
@@ -78,6 +84,8 @@
 		C8CDEA382622A86500D12753 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C8CDEA3F2622A86F00D12753 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C8CDEA542622B50500D12753 /* DashboardInitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInitialVC.swift; sourceTree = "<group>"; };
+		C8CDEA722622CAED00D12753 /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
+		C8CDEA732622CAED00D12753 /* DashboardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardCell.xib; sourceTree = "<group>"; };
 		C8FFC72C26229ADA00D3EE6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "PhotoYou/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		CF9ACE55D9FEE98D76A32716 /* Pods_PhotoYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1750B67B9D2E2467D5EFBF7 /* Pods-PhotoYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoYou.debug.xcconfig"; path = "Target Support Files/Pods-PhotoYou/Pods-PhotoYou.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +213,23 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		C8CDEA702622CACC00D12753 /* CollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				C8CDEA712622CAD600D12753 /* DashboardCell */,
+			);
+			path = CollectionCells;
+			sourceTree = "<group>";
+		};
+		C8CDEA712622CAD600D12753 /* DashboardCell */ = {
+			isa = PBXGroup;
+			children = (
+				C8CDEA722622CAED00D12753 /* DashboardCell.swift */,
+				C8CDEA732622CAED00D12753 /* DashboardCell.xib */,
+			);
+			path = DashboardCell;
+			sourceTree = "<group>";
+		};
 		C8FFC72426229A4600D3EE6D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +242,7 @@
 		C8FFC72526229A5000D3EE6D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C8CDEA702622CACC00D12753 /* CollectionCells */,
 				C8CDEA462622B4DA00D12753 /* Dashboard */,
 				C8CDEA202622A16A00D12753 /* InitialViews */,
 				C8C6FE6C262296FC00528D13 /* Main.storyboard */,
@@ -345,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8CDEA772622CAED00D12753 /* DashboardCell.xib in Resources */,
 				C8C6FE73262296FE00528D13 /* LaunchScreen.storyboard in Resources */,
 				C8FFC72D26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */,
 				C8C6FE70262296FE00528D13 /* Assets.xcassets in Resources */,
@@ -356,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8CDEA782622CAED00D12753 /* DashboardCell.xib in Resources */,
 				C8FFC72E26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8CDEA792622CAED00D12753 /* DashboardCell.xib in Resources */,
 				C8FFC72F26229ADA00D3EE6D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +547,7 @@
 				C8C6FE69262296FC00528D13 /* SceneDelegate.swift in Sources */,
 				C8CDEA402622A86F00D12753 /* SignUpView.swift in Sources */,
 				C8CDEA392622A86500D12753 /* SignInView.swift in Sources */,
+				C8CDEA742622CAED00D12753 /* DashboardCell.swift in Sources */,
 				C8CDEA552622B50500D12753 /* DashboardInitialVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8CDEA752622CAED00D12753 /* DashboardCell.swift in Sources */,
 				C8CDEA562622B50500D12753 /* DashboardInitialVC.swift in Sources */,
 				C8CDEA332622A44E00D12753 /* LoginViewController.swift in Sources */,
 				C8CDEA412622A86F00D12753 /* SignUpView.swift in Sources */,
@@ -539,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8CDEA762622CAED00D12753 /* DashboardCell.swift in Sources */,
 				C8CDEA572622B50500D12753 /* DashboardInitialVC.swift in Sources */,
 				C8CDEA342622A44E00D12753 /* LoginViewController.swift in Sources */,
 				C8CDEA422622A86F00D12753 /* SignUpView.swift in Sources */,
