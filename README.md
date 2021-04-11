@@ -1,2 +1,18 @@
 # PhotoYou
 Una aplicación para que subas tus fotos
+
+## Descripción
+PhotoYou es una aplicación para que puedas subir tus fotografías
+
+Funciones
+- Inicio de sesión
+- Registro de usuario
+- Cerrar sesión
+- Subir fotos
+- Cargar fotos
+- Subir foto de perfil
+- Ver foto de perfil
+- Ver nombre completo
+- Ver detalle de foto
+
+
