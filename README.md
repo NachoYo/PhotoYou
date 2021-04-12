@@ -1,6 +1,9 @@
 # PhotoYou
-Una aplicación para que subas tus fotos
-
+Una aplicación para que subas tus fotos.
+# Hecha por: Luis Ignacio Viñas Petriz, Número de cuenta: 313288676
+# Fecha de entrega: 12 de abril del 2021
+# Diplomado Desarrollo de aplicaciones móviles Quinta Generación
+# Screenshot de la aplicación
 ![alt text](https://github.com/NachoYo/PhotoYou/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%2012%20Pro%20Max%20iOS%2014.4%20-%202021-04-11%20at%2005.23.52.png)
 
 ## Descripción
